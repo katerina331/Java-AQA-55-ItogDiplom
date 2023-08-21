@@ -18,7 +18,7 @@ import static util.LoggingUtils.logInfo;
 @ExtendWith(ScreenShooterReportPortalExtension.class)
 public class TurTest {
 //    static int mysqlNum;
-    private String uri = "http://80.82.49.50:55024";
+    private String uri = "http://localhost:8085";
     private SelenideElement heading = $("h2[class=\"heading heading_size_l heading_theme_alfa-on-white\"]");
     private SelenideElement buttonBuy = $("button[class=\"button button_size_m button_theme_alfa-on-white\"]");
     private SelenideElement buttonCred = $("button[class=\"button button_view_extra button_size_m button_theme_alfa-on-white\"]");
