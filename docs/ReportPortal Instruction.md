@@ -29,7 +29,7 @@ superadmin
 ```
 erebus
 ```
-Заходим по логину-паролю, переходим в настройки пользователя и копируем от туда данные для подключения в файл [src/test/resources/reportportal.properties](src/test/resources/reportportal.properties)
+Заходим по логину-паролю, переходим в настройки пользователя и копируем от туда данные для подключения в файл [src/test/resources/reportportal.properties](../src/test/resources/reportportal.properties)
 ```
 rp.endpoint = http://localhost:8080 //cсылка
 rp.uuid = MpodF8YvlV_ullDg6vanVhRv21M //уникальный ключ
@@ -38,7 +38,7 @@ rp.project = superadmin_personal //название проекта
 ```
 
 ## Настройка проекта
-Все зависимости для ReportPortal прописаны в [build.gradle](build.gradle). 
+Все зависимости для ReportPortal прописаны в [build.gradle](../build.gradle). 
 Также в папке resources содержатся дополнительные файлы настроек.
 
 В проекте добавлены отдельные классы отвечающие за отправку настроенных логов тестов в ReportPortal

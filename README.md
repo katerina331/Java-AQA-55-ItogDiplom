@@ -5,7 +5,7 @@
 Для тестирования будет использоваться язык программирования Java.
 Окружение реализовано в IntelliJ IDEA и Docker, в котором будет запущены необходимые компоненты база данных MySQL или Postgres, заглушка для сервисов на Node, и ReportPortal для создания отчетов.  
 
-План расположен в файл [Plan.md](Plan.md)
+План расположен в файл [Plan.md](docs/Plan.md)
 
 ## Начало работы
 
@@ -26,7 +26,11 @@
 
 Запускаем IntelliJ IDEA. Загружаем скаченный проект [ссылка](https://github.com/katerina331/Java-AQA-55-ItogDiplom).
 
-Настраиваем ReportPortal по [инструкции](ReportPortal Instruction.md)
+Настраиваем ReportPortal по [инструкции](docs/ReportPortal Instruction.md)
+
+Редактируем настройки в [application.properties](application.properties), выбираем базу данных и порт приложения.
+Аналогично в [docker-compose.yml](docker-compose.yml), выбираем базу данных.
+Редактируем [reportportal.properties](src%2Ftest%2Fresources%2Freportportal.properties), rp.endpoint переписываем значение на http://localhost:8080 если запускается все на локальной машине.
 
 Запускаем окружение командой в терминале
 ```
@@ -37,9 +41,9 @@ docker-compose up
 ```
 java -jar artifacts/aqa-shop.jar
 ```
-После запуска в браузере по ссылке [localhost:8085](https://localhost:8085) будет доступно приложение
+После запуска в браузере по ссылке [localhost:8085](https://localhost:8085) будет доступно приложение по умолчанию
 
-![img.png](img.png)
+![img.png](docs/img.png)
 
 Все зависимости и настройки для тестирования прописаны в [build.gradle](build.gradle)
 
@@ -49,6 +53,10 @@ java -jar artifacts/aqa-shop.jar
 ```
 
 После прохождения тестов по ссылке [localhost:8080](https://localhost:8080) на ReportPortal будет доступен отчет о тестировании.
+
+#### Отчет о тестирование, изображения выполненного тестирования.
+![ReportPortal Tests.png](docs%2FReportPortal%20Tests.png)
+![ReportPortal DashBoards.png](docs%2FReportPortal%20DashBoards.png)
 
 
 ## Лицензия
