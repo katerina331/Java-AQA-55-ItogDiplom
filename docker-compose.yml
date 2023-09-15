@@ -27,3 +27,4 @@ services:
     working_dir: /home/node/app
     volumes:
       - ./gate-simulator/:/home/node/app
+    command: "npm start"
