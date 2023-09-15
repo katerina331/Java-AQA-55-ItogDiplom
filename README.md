@@ -49,11 +49,11 @@ java -jar artifacts/aqa-shop.jar --spring.datasource.url=jdbc:postgresql://local
 
 Запуск тестов с базой MySQL выполняется командой
 ```
-./gradlew clean test -DsqlUrl="jdbc:mysql://localhost:3306/app"
+./gradlew clean test -DsqlUrl='jdbc:mysql://localhost:3306/app'
 ```
 Запуск тестов с базой PostgreSQL выполняется командой
 ```
-./gradlew clean test -DsqlUrl="jdbc:postgresql://localhost:5432/app"
+./gradlew clean test -DsqlUrl='jdbc:postgresql://localhost:5432/app'
 ```
 
 
