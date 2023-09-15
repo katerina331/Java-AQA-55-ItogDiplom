@@ -41,7 +41,7 @@ java -jar artifacts/aqa-shop.jar --spring.datasource.url=jdbc:mysql://localhost:
 ```
 java -jar artifacts/aqa-shop.jar --spring.datasource.url=jdbc:postgresql://localhost:5432/app
 ```
-После запуска в браузере по ссылке [localhost:8080](https://localhost:8080) будет доступно приложение
+После запуска в браузере по ссылке [localhost:8080](http://localhost:8080) будет доступно приложение
 
 ![img.png](docs/img.png)
 
