@@ -1,5 +1,6 @@
 plugins {
     id 'java'
+    id 'io.qameta.allure' version '2.11.2'
 }
 
 group 'ru.netology'
@@ -8,6 +9,13 @@ version '1.0-SNAPSHOT'
 sourceCompatibility = 11
 compileJava.options.encoding = "UTF-8"
 compileTestJava.options.encoding = "UTF-8"
+
+allure {
+    version = '2.20.1'
+    useJUnit5 {
+        version = '2.20.1'
+    }
+}
 
 repositories {
     mavenCentral()
@@ -21,15 +29,11 @@ dependencies {
     implementation 'mysql:mysql-connector-java:8.0.33'
     runtimeOnly 'org.postgresql:postgresql:42.6.0'
 
-    implementation 'com.epam.reportportal:agent-java-junit5:5.1.10'
-    implementation 'com.epam.reportportal:logger-java-logback:5.1.6'
-    implementation 'ch.qos.logback:logback-classic:1.4.8'
-    implementation 'com.epam.reportportal:logger-java-log4j:5.1.8'
+    testRuntimeOnly 'org.slf4j:slf4j-simple:2.0.0-alpha1'
+    testImplementation 'io.qameta.allure:allure-selenide:2.21.0'
 }
 
 test {
     useJUnitPlatform()
-    systemProperty 'selenide.headless', System.getProperty('selenide.headless')
-    systemProperty 'junit.jupiter.extensions.autodetection.enebled', true
-    testLogging.showStandardStreams = true
+    systemProperties(System.getProperties())
 }

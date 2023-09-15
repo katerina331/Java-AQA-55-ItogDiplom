@@ -1,24 +1,34 @@
 package test;
 
-import actions.ActionsPages;
 import org.junit.jupiter.api.*;
-import org.junit.jupiter.api.extension.ExtendWith;
-import util.ScreenShooterReportPortalExtension;
+import page.DayTripBuyPage;
+import page.DayTripPage;
+import util.StartTest;
 
-import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
+import static com.codeborne.selenide.Selenide.open;
 import static data.DataHelper.*;
 import static data.SQLHelper.*;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-@ExtendWith(ScreenShooterReportPortalExtension.class)
-public class TurTestBDSQL {
-    ActionsPages actionsPages;
+public class TurBDSQLTest {
+    DayTripPage dayTripPage;
     CardInfo cardInfo;
+
+    @BeforeAll
+    static void setUpAll() {
+        StartTest.setUpAll();
+    }
+
+    @AfterAll
+    static void tearDownAll() {
+        StartTest.tearDownAll();
+    }
 
     @BeforeEach
     @DisplayName("Начальные установки Теста")
     void setup() {
-        actionsPages = new ActionsPages();
+        open("/");
+        dayTripPage = new DayTripPage();
     }
 
     @Test
@@ -26,13 +36,13 @@ public class TurTestBDSQL {
     void buyTourForCardApprovedCheckDBTest() {
         int expectedCheck = getNumSQL() + 1;
         cardInfo = getFirstCardInfo();
-        actionsPages.chooseBuy();
-        actionsPages.setNumberCard(cardInfo.getNumberCard());
-        actionsPages.setMonthCard(getMonthsCardInfo(1));
-        actionsPages.setYearCard(getYearCardInfo(1));
-        actionsPages.setUserCard(getUserCardInfo());
-        actionsPages.setCvcCodCard(getCvcCodCardInfo());
-        actionsPages.clickSendCheckMess(getCheckGoodInfo());
+        DayTripBuyPage dayTripBuyPage = dayTripPage.chooseBuy();
+        dayTripBuyPage.setNumberCard(cardInfo.getNumberCard());
+        dayTripBuyPage.setMonthCard(getMonthsCardInfo(1));
+        dayTripBuyPage.setYearCard(getYearCardInfo(1));
+        dayTripBuyPage.setUserCard(getUserCardInfo());
+        dayTripBuyPage.setCvcCodCard(getCvcCodCardInfo());
+        dayTripBuyPage.clickSendCheckMess(getCheckGoodInfo());
         int actualCheck = getNumSQL();
         assertEquals(expectedCheck, actualCheck);
         String expectedStatus = cardInfo.getStatusCard();
@@ -45,13 +55,13 @@ public class TurTestBDSQL {
     void buyTourForCardDeclinedCheckDBTest() {
         int expectedCheck = getNumSQL() + 1;
         cardInfo = getSecondCardInfo();
-        actionsPages.chooseBuy();
-        actionsPages.setNumberCard(cardInfo.getNumberCard());
-        actionsPages.setMonthCard(getMonthsCardInfo(1));
-        actionsPages.setYearCard(getYearCardInfo(1));
-        actionsPages.setUserCard(getUserCardInfo());
-        actionsPages.setCvcCodCard(getCvcCodCardInfo());
-        actionsPages.clickSendCheckMess(getCheckErrorInfo());
+        DayTripBuyPage dayTripBuyPage = dayTripPage.chooseBuy();
+        dayTripBuyPage.setNumberCard(cardInfo.getNumberCard());
+        dayTripBuyPage.setMonthCard(getMonthsCardInfo(1));
+        dayTripBuyPage.setYearCard(getYearCardInfo(1));
+        dayTripBuyPage.setUserCard(getUserCardInfo());
+        dayTripBuyPage.setCvcCodCard(getCvcCodCardInfo());
+        dayTripBuyPage.clickSendCheckMess(getCheckErrorInfo());
         int actualCheck = getNumSQL();
         assertEquals(expectedCheck, actualCheck);
         String expectedStatus = cardInfo.getStatusCard();
@@ -64,13 +74,13 @@ public class TurTestBDSQL {
     void buyTourCredCardApprovedCheckDBTest() {
         int expectedCheck = getNumSQL() + 1;
         cardInfo = getFirstCardInfo();
-        actionsPages.chooseCred();
-        actionsPages.setNumberCard(cardInfo.getNumberCard());
-        actionsPages.setMonthCard(getMonthsCardInfo(1));
-        actionsPages.setYearCard(getYearCardInfo(1));
-        actionsPages.setUserCard(getUserCardInfo());
-        actionsPages.setCvcCodCard(getCvcCodCardInfo());
-        actionsPages.clickSendCheckMess(getCheckGoodInfo());
+        DayTripBuyPage dayTripBuyPage = dayTripPage.chooseCred();
+        dayTripBuyPage.setNumberCard(cardInfo.getNumberCard());
+        dayTripBuyPage.setMonthCard(getMonthsCardInfo(1));
+        dayTripBuyPage.setYearCard(getYearCardInfo(1));
+        dayTripBuyPage.setUserCard(getUserCardInfo());
+        dayTripBuyPage.setCvcCodCard(getCvcCodCardInfo());
+        dayTripBuyPage.clickSendCheckMess(getCheckGoodInfo());
         int actualCheck = getNumSQL();
         assertEquals(expectedCheck, actualCheck);
         String expectedStatus = cardInfo.getStatusCard();
@@ -83,13 +93,13 @@ public class TurTestBDSQL {
     void buyTourCredCardDeclinedCheckDBTest() {
         int expectedCheck = getNumSQL() + 1;
         cardInfo = getSecondCardInfo();
-        actionsPages.chooseCred();
-        actionsPages.setNumberCard(cardInfo.getNumberCard());
-        actionsPages.setMonthCard(getMonthsCardInfo(1));
-        actionsPages.setYearCard(getYearCardInfo(1));
-        actionsPages.setUserCard(getUserCardInfo());
-        actionsPages.setCvcCodCard(getCvcCodCardInfo());
-        actionsPages.clickSendCheckMess(getCheckErrorInfo());
+        DayTripBuyPage dayTripBuyPage = dayTripPage.chooseCred();
+        dayTripBuyPage.setNumberCard(cardInfo.getNumberCard());
+        dayTripBuyPage.setMonthCard(getMonthsCardInfo(1));
+        dayTripBuyPage.setYearCard(getYearCardInfo(1));
+        dayTripBuyPage.setUserCard(getUserCardInfo());
+        dayTripBuyPage.setCvcCodCard(getCvcCodCardInfo());
+        dayTripBuyPage.clickSendCheckMess(getCheckErrorInfo());
         int actualCheck = getNumSQL();
         assertEquals(expectedCheck, actualCheck);
         String expectedStatus = cardInfo.getStatusCard();

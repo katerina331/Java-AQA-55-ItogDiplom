@@ -1,13 +1,13 @@
 package data;
 
 import com.github.javafaker.Faker;
+
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.Locale;
 
 public class DataHelper {
     static Faker faker = new Faker(new Locale("en"));
-
 
     private DataHelper() {
     }
@@ -32,16 +32,16 @@ public class DataHelper {
     }
 
     public static CardInfo getFirstCardInfo() {
-        return new CardInfo("4444 4444 4444 4441","APPROVED");
+        return new CardInfo("4444 4444 4444 4441", "APPROVED");
     }
 
     public static CardInfo getSecondCardInfo() {
-        return new CardInfo("4444 4444 4444 4442","DECLINED");
+        return new CardInfo("4444 4444 4444 4442", "DECLINED");
     }
 
     public static String getRandNumbCardInfo(int length) {
         String num = faker.number().digits(length);
-        if ((num == "4444444444444441")||(num == "4444444444444442")||(num == "0000000000000000")) {
+        if (num.equals("4444444444444441") || num.equals("4444444444444442") || num.equals("0000000000000000")) {
             num = faker.number().digits(length);
         }
         return num;
@@ -80,21 +80,21 @@ public class DataHelper {
     }
 
     public static String getTextCardInfo(int length) {
-        return randString("ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz",length);
+        return randString("ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz", length);
     }
 
     public static String getSymbolCardInfo(int length) {
-        return randString("\\|\"'`&<>^*«»@#№%~",length);
+        return randString("\\|\"'`&<>^*«»@#№%~", length);
     }
 
     public static String getSingCardInfo(int length) {
-        return randString(",;:?.!-+=/",length);
+        return randString(",;:?.!-+=/", length);
     }
 
     private static String randString(String s, int length) {
         String t = "";
-        for (int i=0;i<length;i++) {
-            t= t + s.charAt((int) (Math.random()*s.length()));
+        for (int i = 0; i < length; i++) {
+            t += (s.charAt((int) (Math.random() * s.length())));
         }
         return t;
     }
