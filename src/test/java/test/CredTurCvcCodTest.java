@@ -31,7 +31,7 @@ public class CredTurCvcCodTest {
     @Test
     @DisplayName("Приобретение тура в приложении в кредит по данным карты вводя не валидные текстовые значения cvc/cvv")
     void buyTourCredForTextOnCardCvcCod() {
-        DayTripBuyPage dayTripBuyPage = dayTripPage.chooseBuy();
+        DayTripBuyPage dayTripBuyPage = dayTripPage.chooseCred();
         dayTripBuyPage.setNumberCard(getFirstCardInfo().getNumberCard());
         dayTripBuyPage.setMonthCard(getMonthsCardInfo(1));
         dayTripBuyPage.setYearCard(getYearCardInfo(1));
@@ -43,7 +43,7 @@ public class CredTurCvcCodTest {
     @Test
     @DisplayName("Приобретение тура в приложении в кредит по данным карты вводя не валидные символьные значения cvc/cvv")
     void buyTourCredForSymbolOnCardCvcCod() {
-        DayTripBuyPage dayTripBuyPage = dayTripPage.chooseBuy();
+        DayTripBuyPage dayTripBuyPage = dayTripPage.chooseCred();
         dayTripBuyPage.setNumberCard(getFirstCardInfo().getNumberCard());
         dayTripBuyPage.setMonthCard(getMonthsCardInfo(1));
         dayTripBuyPage.setYearCard(getYearCardInfo(1));
@@ -55,7 +55,7 @@ public class CredTurCvcCodTest {
     @Test
     @DisplayName("Приобретение тура в приложении в кредит по данным карты вводя не валидные знаки в значения cvc/cvv")
     void buyTourCredForSignOnCardCvcCod() {
-        DayTripBuyPage dayTripBuyPage = dayTripPage.chooseBuy();
+        DayTripBuyPage dayTripBuyPage = dayTripPage.chooseCred();
         dayTripBuyPage.setNumberCard(getFirstCardInfo().getNumberCard());
         dayTripBuyPage.setMonthCard(getMonthsCardInfo(1));
         dayTripBuyPage.setYearCard(getYearCardInfo(1));
@@ -66,7 +66,7 @@ public class CredTurCvcCodTest {
     @Test
     @DisplayName("Приобретение тура в приложении в кредит по данным карты вводя не валидные пустые значения cvc/cvv")
     void buyTourCredForEmptyOnCardCvcCod() {
-        DayTripBuyPage dayTripBuyPage = dayTripPage.chooseBuy();
+        DayTripBuyPage dayTripBuyPage = dayTripPage.chooseCred();
         dayTripBuyPage.setNumberCard(getFirstCardInfo().getNumberCard());
         dayTripBuyPage.setMonthCard(getMonthsCardInfo(1));
         dayTripBuyPage.setYearCard(getYearCardInfo(1));
@@ -78,7 +78,7 @@ public class CredTurCvcCodTest {
     @Test
     @DisplayName("Приобретение тура в приложении в кредит по данным карты вводя не валидную одну цифру в значения cvc/cvv")
     void buyTourCredForCyrillicOnCardCvcCod() {
-        DayTripBuyPage dayTripBuyPage = dayTripPage.chooseBuy();
+        DayTripBuyPage dayTripBuyPage = dayTripPage.chooseCred();
         dayTripBuyPage.setNumberCard(getFirstCardInfo().getNumberCard());
         dayTripBuyPage.setMonthCard(getMonthsCardInfo(1));
         dayTripBuyPage.setYearCard(getYearCardInfo(1));
@@ -90,7 +90,7 @@ public class CredTurCvcCodTest {
     @Test
     @DisplayName("Приобретение тура в приложении в кредит по данным карты вводя не валидные большее значения cvc/cvv")
     void buyTourCredForLongOnCardCvcCod() {
-        DayTripBuyPage dayTripBuyPage = dayTripPage.chooseBuy();
+        DayTripBuyPage dayTripBuyPage = dayTripPage.chooseCred();
         dayTripBuyPage.setNumberCard(getFirstCardInfo().getNumberCard());
         dayTripBuyPage.setMonthCard(getMonthsCardInfo(1));
         dayTripBuyPage.setYearCard(getYearCardInfo(1));
@@ -102,7 +102,7 @@ public class CredTurCvcCodTest {
     @Test
     @DisplayName("Приобретение тура в приложении в кредит по данным карты вводя не валидный пробел в значения cvc/cvv")
     void buyTourCredForSpaceOnCardCvcCod() {
-        DayTripBuyPage dayTripBuyPage = dayTripPage.chooseBuy();
+        DayTripBuyPage dayTripBuyPage = dayTripPage.chooseCred();
         dayTripBuyPage.setNumberCard(getFirstCardInfo().getNumberCard());
         dayTripBuyPage.setMonthCard(getMonthsCardInfo(1));
         dayTripBuyPage.setYearCard(getYearCardInfo(1));

@@ -31,7 +31,7 @@ public class CredTurMonthTest {
     @Test
     @DisplayName("Приобретение тура в приложении в кредит по данным карты вводя не валидные текстовые значения месяца")
     void buyTourCredForTextOnCardMonth() {
-        DayTripBuyPage dayTripBuyPage = dayTripPage.chooseBuy();
+        DayTripBuyPage dayTripBuyPage = dayTripPage.chooseCred();
         dayTripBuyPage.setNumberCard(getFirstCardInfo().getNumberCard());
         dayTripBuyPage.setMonthCard(getTextCardInfo(2));
         dayTripBuyPage.setYearCard(getYearCardInfo(1));
@@ -43,7 +43,7 @@ public class CredTurMonthTest {
     @Test
     @DisplayName("Приобретение тура в приложении в кредит по данным карты вводя не валидные символьные значения месяца")
     void buyTourCredForSymbolOnCardMonth() {
-        DayTripBuyPage dayTripBuyPage = dayTripPage.chooseBuy();
+        DayTripBuyPage dayTripBuyPage = dayTripPage.chooseCred();
         dayTripBuyPage.setNumberCard(getFirstCardInfo().getNumberCard());
         dayTripBuyPage.setMonthCard(getSymbolCardInfo(2));
         dayTripBuyPage.setYearCard(getYearCardInfo(1));
@@ -55,7 +55,7 @@ public class CredTurMonthTest {
     @Test
     @DisplayName("Приобретение тура в приложении в кредит по данным карты вводя не валидные знаки в значения месяца")
     void buyTourCredForSignOnCardMonth() {
-        DayTripBuyPage dayTripBuyPage = dayTripPage.chooseBuy();
+        DayTripBuyPage dayTripBuyPage = dayTripPage.chooseCred();
         dayTripBuyPage.setNumberCard(getFirstCardInfo().getNumberCard());
         dayTripBuyPage.setMonthCard(getSingCardInfo(2));
         dayTripBuyPage.setYearCard(getYearCardInfo(1));
@@ -67,7 +67,7 @@ public class CredTurMonthTest {
     @Test
     @DisplayName("Приобретение тура в приложении в кредит по данным карты вводя не валидные пустые значения месяца")
     void buyTourCredForEmptyOnCardMonth() {
-        DayTripBuyPage dayTripBuyPage = dayTripPage.chooseBuy();
+        DayTripBuyPage dayTripBuyPage = dayTripPage.chooseCred();
         dayTripBuyPage.setNumberCard(getFirstCardInfo().getNumberCard());
         dayTripBuyPage.setMonthCard("");
         dayTripBuyPage.setYearCard(getYearCardInfo(1));
@@ -79,7 +79,7 @@ public class CredTurMonthTest {
     @Test
     @DisplayName("Приобретение тура в приложении в кредит по данным карты вводя не валидный 13 месяц")
     void buyTourCredForThirteenOnCardMonth() {
-        DayTripBuyPage dayTripBuyPage = dayTripPage.chooseBuy();
+        DayTripBuyPage dayTripBuyPage = dayTripPage.chooseCred();
         dayTripBuyPage.setNumberCard(getFirstCardInfo().getNumberCard());
         dayTripBuyPage.setMonthCard("13");
         dayTripBuyPage.setYearCard(getYearCardInfo(1));
@@ -91,7 +91,7 @@ public class CredTurMonthTest {
     @Test
     @DisplayName("Приобретение тура в приложении в кредит по данным карты вводя не валидный нулевой месяц")
     void buyTourCredForZeroOnCardMonth() {
-        DayTripBuyPage dayTripBuyPage = dayTripPage.chooseBuy();
+        DayTripBuyPage dayTripBuyPage = dayTripPage.chooseCred();
         dayTripBuyPage.setNumberCard(getFirstCardInfo().getNumberCard());
         dayTripBuyPage.setMonthCard("0");
         dayTripBuyPage.setYearCard(getYearCardInfo(1));
@@ -103,7 +103,7 @@ public class CredTurMonthTest {
     @Test
     @DisplayName("Приобретение тура в приложении в кредит по данным карты вводя не валидный прошедший месяц текущего года")
     void buyTourCredForOldOnCardMonth() {
-        DayTripBuyPage dayTripBuyPage = dayTripPage.chooseBuy();
+        DayTripBuyPage dayTripBuyPage = dayTripPage.chooseCred();
         dayTripBuyPage.setNumberCard(getFirstCardInfo().getNumberCard());
         dayTripBuyPage.setMonthCard(getMonthsCardInfo(-1));
         dayTripBuyPage.setYearCard(getYearCardInfo(0));
@@ -115,7 +115,7 @@ public class CredTurMonthTest {
     @Test
     @DisplayName("Приобретение тура в приложении в кредит по данным карты вводя не валидныt два ноля в месяц")
     void buyTourCredForDoubleZeroOnCardMonth() {
-        DayTripBuyPage dayTripBuyPage = dayTripPage.chooseBuy();
+        DayTripBuyPage dayTripBuyPage = dayTripPage.chooseCred();
         dayTripBuyPage.setNumberCard(getFirstCardInfo().getNumberCard());
         dayTripBuyPage.setMonthCard("00");
         dayTripBuyPage.setYearCard(getYearCardInfo(1));
