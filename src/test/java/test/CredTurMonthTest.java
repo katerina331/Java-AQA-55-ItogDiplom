@@ -113,11 +113,11 @@ public class CredTurMonthTest {
     }
 
     @Test
-    @DisplayName("Приобретение тура в приложении в кредит по данным карты вводя не два ноля в месяц")
+    @DisplayName("Приобретение тура в приложении в кредит по данным карты вводя не валидныt два ноля в месяц")
     void buyTourCredForDoubleZeroOnCardMonth() {
         DayTripBuyPage dayTripBuyPage = dayTripPage.chooseBuy();
         dayTripBuyPage.setNumberCard(getFirstCardInfo().getNumberCard());
-        dayTripBuyPage.setMonthCard("0");
+        dayTripBuyPage.setMonthCard("00");
         dayTripBuyPage.setYearCard(getYearCardInfo(1));
         dayTripBuyPage.setUserCard(getUserCardInfo());
         dayTripBuyPage.setCvcCodCard(getCvcCodCardInfo());
