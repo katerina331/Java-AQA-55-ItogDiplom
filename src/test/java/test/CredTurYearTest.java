@@ -29,30 +29,6 @@ public class CredTurYearTest {
     }
 
     @Test
-    @DisplayName("Приобретение тура в приложении в кредит по данным карты вводя не валидный прошедший месяц текущего года")
-    void buyTourCredForOldOnCardMonth() {
-        DayTripBuyPage dayTripBuyPage = dayTripPage.chooseCred();
-        dayTripBuyPage.setNumberCard(getFirstCardInfo().getNumberCard());
-        dayTripBuyPage.setMonthCard(getMonthsCardInfo(-1));
-        dayTripBuyPage.setYearCard(getYearCardInfo(0));
-        dayTripBuyPage.setUserCard(getUserCardInfo());
-        dayTripBuyPage.setCvcCodCard(getCvcCodCardInfo());
-        dayTripBuyPage.clickCheckError(getCheckWrongInfo());
-    }
-
-    @Test
-    @DisplayName("Приобретение тура в приложении в кредит по данным карты вводя не валидный нулевой месяц")
-    void buyTourCredForDoubleZeroOnCardMonth() {
-        DayTripBuyPage dayTripBuyPage = dayTripPage.chooseCred();
-        dayTripBuyPage.setNumberCard(getFirstCardInfo().getNumberCard());
-        dayTripBuyPage.setMonthCard("0");
-        dayTripBuyPage.setYearCard(getYearCardInfo(1));
-        dayTripBuyPage.setUserCard(getUserCardInfo());
-        dayTripBuyPage.setCvcCodCard(getCvcCodCardInfo());
-        dayTripBuyPage.clickCheckError(getCheckNoValidInfo());
-    }
-
-    @Test
     @DisplayName("Приобретение тура в приложении в кредит по данным карты вводя не валидные текстовые значения года")
     void buyTourCredForTextOnCardYear() {
         DayTripBuyPage dayTripBuyPage = dayTripPage.chooseCred();
@@ -134,6 +110,18 @@ public class CredTurYearTest {
         dayTripBuyPage.setUserCard(getUserCardInfo());
         dayTripBuyPage.setCvcCodCard(getCvcCodCardInfo());
         dayTripBuyPage.clickCheckError(getCheckExpiredInfo());
+    }
+
+    @Test
+    @DisplayName("Приобретение тура в приложении в кредит по данным карты вводя не валидные одной цифрой значения года")
+    void buyTourCredForOneOnCardYear() {
+        DayTripBuyPage dayTripBuyPage = dayTripPage.chooseCred();
+        dayTripBuyPage.setNumberCard(getFirstCardInfo().getNumberCard());
+        dayTripBuyPage.setMonthCard(getMonthsCardInfo(1));
+        dayTripBuyPage.setYearCard(getYearCardInfo(1).substring(1));
+        dayTripBuyPage.setUserCard(getUserCardInfo());
+        dayTripBuyPage.setCvcCodCard(getCvcCodCardInfo());
+        dayTripBuyPage.clickCheckError(getCheckNoValidInfo());
     }
 
     @Test

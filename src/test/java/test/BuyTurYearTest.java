@@ -113,6 +113,18 @@ public class BuyTurYearTest {
     }
 
     @Test
+    @DisplayName("Приобретение тура в приложении оплачивая картой вводя не валидные одной цифрой значения года")
+    void buyTourForOneOnCardYear() {
+        DayTripBuyPage dayTripBuyPage = dayTripPage.chooseBuy();
+        dayTripBuyPage.setNumberCard(getFirstCardInfo().getNumberCard());
+        dayTripBuyPage.setMonthCard(getMonthsCardInfo(1));
+        dayTripBuyPage.setYearCard(getYearCardInfo(1).substring(1));
+        dayTripBuyPage.setUserCard(getUserCardInfo());
+        dayTripBuyPage.setCvcCodCard(getCvcCodCardInfo());
+        dayTripBuyPage.clickCheckError(getCheckNoValidInfo());
+    }
+
+    @Test
     @DisplayName("Приобретение тура в приложении оплачивая картой вводя не валидные нулевое значения года")
     void buyTourForZeroOnCardYear() {
         DayTripBuyPage dayTripBuyPage = dayTripPage.chooseBuy();

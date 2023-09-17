@@ -26,7 +26,7 @@
 
 Запускаем IntelliJ IDEA. Загружаем скаченный проект [ссылка](https://github.com/katerina331/Java-AQA-55-ItogDiplom).
 
-Редактируем настройки в [docker-compose.yml](docker-compose.yml), выбираем базу данных.
+Редактируем настройки в [docker-compose.yml](docker-compose.yml), при необходимости.
 
 Запускаем окружение командой в терминале
 ```
